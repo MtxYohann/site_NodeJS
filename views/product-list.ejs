@@ -1,0 +1,32 @@
+<%- include('includes/head.ejs') %>
+<link rel="stylesheet" href="css/style.css">
+  <body>
+    <% if(products.length > 0) { %>
+      <div>
+        <% for(let product of products) { %>  
+          <article class="box">
+            <h2 class="text-center"><%= product.name %></h2>
+            <div class="text-center">
+              <img class="img" src="<%= product.image %>" alt="<%= product.name %>"></div>                    
+            <div class="text-center">
+              <div class="child"><p><%= product.price %>€</p></div>
+              <div class="child"><button><span>Mettre au panier</span></button></div>
+            </div>
+            <div class="text-center">
+              <form action="/product-list/<%= product.id %>" method="post">
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit">Supprimer</button>
+              </form>
+            </div>
+          </article>
+          
+        <% } %>
+      </div>
+      <div class="text-center">
+        <div class="child"><a href="/product-list/create">Ajouter un produit</a>
+      </div>
+    <% } else { %>
+        <h1>No Products Found</h1>
+    <% } %>
+  </body>
+</html>
