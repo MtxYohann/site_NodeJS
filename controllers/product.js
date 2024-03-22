@@ -45,7 +45,7 @@ export const deleteProductById = async (req, res) => {
     try {
         const productId = req.params.id;
 
-        const isDeleted = await product.deleteById(productId);
+        const isDeleted = await product.delete(productId);
 
         if (isDeleted) {
             res.status(200).send(`Le produit avec l'identifiant ${productId} a été supprimé.`);

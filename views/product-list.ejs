@@ -10,7 +10,6 @@
               <img class="img" src="<%= product.image %>" alt="<%= product.name %>"></div>                    
             <div class="text-center">
               <div class="child"><p><%= product.price %>€</p></div>
-              <div class="child"><button><span>Mettre au panier</span></button></div>
             </div>
             <div class="text-center">
               <form action="/product-list/<%= product.id %>" method="post">
@@ -21,9 +20,6 @@
           </article>
           
         <% } %>
-      </div>
-      <div class="text-center">
-        <div class="child"><a href="/product-list/create">Ajouter un produit</a>
       </div>
     <% } else { %>
         <h1>No Products Found</h1>

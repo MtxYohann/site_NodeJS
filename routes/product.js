@@ -12,6 +12,6 @@ router.get("/create",getCreateProductForm);
 router.post("/create",createProduct);
 
 // // Route pour supprimer un produit
-router.delete('/products/:id', deleteProductById);
+router.delete('/product-list/:id', deleteProductById);
 
 export default router;

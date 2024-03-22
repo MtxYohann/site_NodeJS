@@ -19,9 +19,10 @@ Pour exécuter ce projet localement vous devrez suivre ces étapes :
 
 ### CRUD
 
-On peut pour le moment voir les produits déjà mis sur la base de données et en créer malheureusement sans les images pour le moment des erreurs sont encore là pour supprimer.
+On peut pour le moment voir les produits déjà mis sur la base de données et en créer malheureusement sans les images pour le moment des erreurs sont encore là pour supprimer un produit.
 
 ### différentes pages 
 
 http://localhost:3000/product-list
+
 http://localhost:3000/product-list/create
