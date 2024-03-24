@@ -12,9 +12,8 @@
               <div class="child"><p><%= product.price %>€</p></div>
             </div>
             <div class="text-center">
-              <form action="/product-list/<%= product.id %>" method="post">
-                <input type="hidden" name="_method" value="DELETE">
-                <button type="submit">Supprimer</button>
+              <form action="/product-list/<%= product.id %>" method="POST">
+                <button type="submit" onclick="return confirm ('Voulez-vous vraiment supprimer se produit ?')" href ="product-list.ejs">Supprimer</button>
               </form>
             </div>
           </article>
@@ -22,7 +21,7 @@
         <% } %>
       </div>
     <% } else { %>
-        <h1>No Products Found</h1>
+        <h1>Aucun produit trouvé, Désoler</h1>
     <% } %>
   </body>
 </html>

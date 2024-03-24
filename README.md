@@ -15,11 +15,14 @@ Pour exécuter ce projet localement vous devrez suivre ces étapes :
 4. Lancez le serveur : `npm start`
 5. Accédez à l'application via votre navigateur web à `http://localhost:3000/product-list`.
 
+Il faut aussi importer la base de données, le dump est dans le fichier BDD_SQL ("test.sql")
+Il faut l'importer sur PhphMyadmin par exemple.
+
 ## Fonctionnalités
 
 ### CRUD
 
-On peut pour le moment voir les produits déjà mis sur la base de données et en créer malheureusement sans les images pour le moment des erreurs sont encore là pour supprimer un produit.
+On peut pour le moment voir les produits déjà mis sur la base de données et en créer malheureusement sans les images pour le moment. Un bouton est disponible pour supprimer un produit avec une confirmation,si il y n'y a plus aucun produit un message sera écrit sur la page web.
 
 ### différentes pages 
 

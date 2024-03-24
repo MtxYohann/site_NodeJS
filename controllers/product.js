@@ -12,7 +12,7 @@ export const productController = (req,res,next) =>{
     })
    
 }
-    // Display the form for creating a new pizza
+// Afficher le formulaire de création d'un produit
 export const getCreateProductForm = (req, res) => {
         res.render("create-product",{
             pageTitle: "Création produit",
@@ -41,19 +41,11 @@ export const createProduct = async (req, res) => {
 };
 
 // Supprimer un produit
-export const deleteProductById = async (req, res) => {
-    try {
-        const productId = req.params.id;
+export const deleteProductById = (req, res, next) => {
+    const productId = req.params.productId;
 
-        const isDeleted = await product.delete(productId);
-
-        if (isDeleted) {
-            res.status(200).send(`Le produit avec l'identifiant ${productId} a été supprimé.`);
-        } else {
-            res.status(404).send(`Aucun produit trouvé avec l'identifiant ${productId}.`);
-        }
-    } catch (error) {
-        console.error('Erreur lors de la suppression du produit:', error);
-        res.status(500).send('Une erreur est survenue lors de la suppression du produit.');
-    }
+    // Supprimer le produit de la bdd
+    connection.query('DELETE FROM product WHERE id = ?', [productId], (error, results) => {  
+    });
+    res.redirect("/product-list");  
 };
